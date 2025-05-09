@@ -22,20 +22,36 @@
     <div class="weather-app">
       <header>
         <form action="">
-          <input type="search" placeholder="Enter city..." required />
-          <input type="submit" value="search" />
+          <input
+            type="search"
+            class="searchform-input"
+            placeholder="Enter city..."
+            required
+          />
+          <input
+            type="submit"
+            value="search"
+            class="searchform-button"
+            autofocus
+          />
         </form>
       </header>
       <main>
-        <div>
-          <h1>Paris</h1>
+        <div class="city-weather-description">
+          <div>
+            <h1 class="city-name">Paris</h1>
 
-          <p>
-            Tuesday 20:23, scattered clouds <br />
-            Humidity; 80% wind: 3.12 Km/h
-          </p>
+            <p class="weather-description">
+              Tuesday 20:23, scattered clouds <br />
+              Humidity;<strong> 80%</strong> wind:<strong> 3.12 Km/h</strong>
+            </p>
+          </div>
+          <div>
+            <span class="weather-emoji">🌞 </span
+            ><span class="temperature-value">22</span
+            ><span class="temp-icon">&degC</span>
+          </div>
         </div>
-        <div>🌞 22&degC</div>
       </main>
       <footer>
         This project was coded by
