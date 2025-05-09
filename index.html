@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,10 +22,13 @@
   <body>
     <div class="weather-app">
       <header>
-        <form action="">
+        <form action="" class="search-form" id="search-form">
           <input
+            autofocus
+            autocapitalize="characters"
             type="search"
             class="searchform-input"
+            id="searchform-input"
             placeholder="Enter city..."
             required
           />
@@ -39,7 +43,7 @@
       <main>
         <div class="city-weather-description">
           <div>
-            <h1 class="city-name">Paris</h1>
+            <h1 class="city-name" id="city-name">Paris</h1>
 
             <p class="weather-description">
               Tuesday 20:23, scattered clouds <br />
@@ -63,5 +67,6 @@
         hosted by <a href="https://week7shecodesplus.netlify.app/">Netlify</a>
       </footer>
     </div>
+    <script src="java.js"></script>
   </body>
 </html>
