@@ -1,16 +1,23 @@
 function searchCityEngine(response) {
+  console.log(response.data);
   let cityNameElement = document.querySelector("#searchform-input");
   cityNameElement.innerHTML = response.data.city;
-  let temperature = Math.round(response.data.temperature.current);
+
   let temperatureValue = document.querySelector("#temperature-value");
-  temperatureValue.innerHTML = `${temperature}`;
-  let humidity = response.data.temperature.humidity;
+  temperatureValue.innerHTML = Math.round(response.data.temperature.current);
+
   let humidityValue = document.querySelector("#humidity-value");
-  humidityValue.innerHTML = `${humidity}`;
+  let humidity = response.data.temperature.humidity;
+  humidityValue.innerHTML = `${humidity}%`;
   let cloudcondition = document.querySelector("#cloud-condition");
   cloudcondition.innerHTML = response.data.condition.description;
   let wind = document.querySelector("#wind-value");
-  wind.innerHTML = response.data.wind.speed;
+  let windvalue = response.data.wind.speed;
+  wind.innerHTML = `${windvalue} km/h`;
+  let emoji = document.querySelector("#emoji-icon");
+  emoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather icon" />`;
+  let date = document.querySelector("#current-date");
+  let currentDate = new Date(response.data.time * 1000);
 }
 
 function searchCity(event) {
