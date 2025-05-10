@@ -18,7 +18,30 @@ function searchCityEngine(response) {
   emoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather icon" />`;
   let date = document.querySelector("#current-date");
   let currentDate = new Date(response.data.time * 1000);
-}
+  function currentDateFormat(date) 
+   {
+    let newDate=new Dates();
+    hour=newDate.getHours();
+    minutes=newDate.getMinutes();
+    if (hour < 10) {
+      hour = `0${hour}`;
+    }   
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let day= days[newDate.getDay()];
+    return `${day} ${hour}:${minutes}`;
+      
+  }
 
 function searchCity(event) {
   event.preventDefault();
