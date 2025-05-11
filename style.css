@@ -83,3 +83,21 @@ footer {
   position: relative;
   bottom: 10px;
 }
+.weather-forecast-for-a-week {
+  display: flex;
+  justify-content: space-between;
+  border-top: #f9f7fe solid 1px;
+  padding-top: 20px;
+}
+.day {
+  color: #842946;
+}
+.day-emoji {
+  font-size: 42px;
+
+  bottom: 10px;
+}
+.day-temperature {
+  font-size: 16px;
+  color: #f65282;
+}

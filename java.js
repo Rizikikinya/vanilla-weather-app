@@ -15,33 +15,35 @@ function searchCityEngine(response) {
   let windvalue = response.data.wind.speed;
   wind.innerHTML = `${windvalue} km/h`;
   let emoji = document.querySelector("#emoji-icon");
-  emoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather icon" />`;
-  let date = document.querySelector("#current-date");
-  let currentDate = new Date(response.data.time * 1000);
-  function currentDateFormat(date) 
-   {
-    let newDate=new Dates();
-    hour=newDate.getHours();
-    minutes=newDate.getMinutes();
-    if (hour < 10) {
-      hour = `0${hour}`;
-    }   
-    if (minutes < 10) {
-      minutes = `0${minutes}`;
-    }
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    let day= days[newDate.getDay()];
-    return `${day} ${hour}:${minutes}`;
-      
+
+  let today = document.querySelector("#current-dates");
+
+  let date = new Date(response.data.time * 1000);
+
+  today.innerHTML = currentDateFormat(date);
+}
+function currentDateFormat(date) {
+  let currentDate = new Date();
+  let hour = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+  if (hour < 10) {
+    hour = `0${hour}`;
   }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[currentDate.getDay()];
+  return `${day} ${hour}: ${minutes},`;
+}
 
 function searchCity(event) {
   event.preventDefault();
@@ -55,3 +57,24 @@ function searchCity(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+function displayForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+  let days = ["Sunday", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  forecastHtml = "";
+  for (let i = 0; i < days.length; i++) {
+    let day = days[i];
+    forecastHtml += `
+    <div>
+      <span class="day">${day}</span>
+      <br />
+      <span class="day-emoji">🌨️</span>
+      <br />
+      <span class="day-temperature">
+        <strong>15&deg</strong> 17&deg
+      </span>
+    </div>`;
+  }
+
+  forecast.innerHTML = forecastHtml;
+}
+displayForecast();
