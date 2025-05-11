@@ -4,7 +4,7 @@ body {
 
 .weather-app {
   background-color: white;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
@@ -77,17 +77,22 @@ footer {
   bottom: 35px;
   font-size: 24px;
 }
-.weather-emoji {
-  font-size: 42px;
+main {
+  padding: 20px;
+}
+#weather-emoji {
+  width: 65px;
+  height: 65px;
+  margin: 0px;
 
   position: relative;
-  bottom: 10px;
+  top: 30px;
 }
 .weather-forecast-for-a-week {
   display: flex;
   justify-content: space-between;
   border-top: #f9f7fe solid 1px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 .day {
   color: #842946;

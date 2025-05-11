@@ -25,12 +25,13 @@
         <form action="" class="search-form" id="search-form">
           <input
             autofocus
-            autocapitalize="characters"
+            autocapitalize="words"
             type="search"
             class="searchform-input"
             id="searchform-input"
             placeholder="Enter city..."
             required
+            
           />
           <input
             type="submit"
@@ -43,19 +44,18 @@
       <main>
         <div class="city-weather-description">
           <div>
-            <h1 class="city-name" id="city-name">Paris</h1>
+            <h1 class="city-name" id="city-name"></h1>
 
             <p class="weather-description">
-              <span id="current-dates"> Tuesday 20:23, </span
-              ><span id="cloud-condition"> scattered clouds </span> <br />
-              Humidity;<strong><span id="humidity-value"> 80% </span></strong>
-              wind:<strong> <span id="wind-value"> 3.12 Km/h</span></strong>
+              <span id="current-dates">,</span
+              > <span id="cloud-condition"> </span> <br />
+              Humidity;
+              <strong><span id="humidity-value"> </span></strong> wind:
+              <strong> <span id="wind-value"> </span></strong>
             </p>
           </div>
-          <div>
-            <span class="weather-emoji" id="weather-emoji">🌞 </span
-            ><span class="temperature-value" id="temperature-value">22</span
-            ><span class="temp-icon">&degC</span>
+          <div></span><span id="weather-emoji"></span><span class="temperature-value" id="temperature-value"></span>
+          <span class="temp-icon">&degC
           </div>
         </div>
         <div class="weather-forecast-for-a-week" id="weather-forecast"></div>

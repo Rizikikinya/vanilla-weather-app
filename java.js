@@ -14,11 +14,11 @@ function searchCityEngine(response) {
   let wind = document.querySelector("#wind-value");
   let windvalue = response.data.wind.speed;
   wind.innerHTML = `${windvalue} km/h`;
-  let emoji = document.querySelector("#emoji-icon");
+  let emoji = document.querySelector("#weather-emoji");
+  emoji.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" />`;
 
   let today = document.querySelector("#current-dates");
   let date = new Date(response.data.time * 1000);
-
   today.innerHTML = currentDateFormat(date);
 }
 function currentDateFormat(date) {
@@ -41,7 +41,7 @@ function currentDateFormat(date) {
     "Saturday",
   ];
   let day = days[currentDate.getDay()];
-  return `${day} ${hour}: ${minutes},`;
+  return `${day} ${hour}:s${minutes},`;
 }
 
 function searchCity(event) {
@@ -49,6 +49,7 @@ function searchCity(event) {
   let input = document.querySelector("#searchform-input");
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = input.value;
+
   let apiKey = "6fe8tf4ae3fc290f9f3ff43213b0b7od";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${input.value}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(searchCityEngine);
