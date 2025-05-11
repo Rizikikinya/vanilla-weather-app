@@ -17,7 +17,6 @@ function searchCityEngine(response) {
   let emoji = document.querySelector("#emoji-icon");
 
   let today = document.querySelector("#current-dates");
-
   let date = new Date(response.data.time * 1000);
 
   today.innerHTML = currentDateFormat(date);
