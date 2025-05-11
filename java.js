@@ -77,3 +77,10 @@ function displayForecast() {
   forecast.innerHTML = forecastHtml;
 }
 displayForecast();
+// default city
+function defaultCity() {
+  let apiKey = "6fe8tf4ae3fc290f9f3ff43213b0b7od";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=London&key=${apiKey}&unit=metric`;
+  axios.get(apiUrl).then(searchCityEngine);
+}
+defaultCity();
