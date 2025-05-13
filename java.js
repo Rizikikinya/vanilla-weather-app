@@ -42,7 +42,7 @@ function currentDateFormat(date) {
     "Saturday",
   ];
   let day = days[currentDate.getDay()];
-  return `${day} ${hour}:s${minutes},`;
+  return `${day} ${hour}:${minutes},`;
 }
 
 function searchCity(event) {
