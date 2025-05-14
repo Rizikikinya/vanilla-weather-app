@@ -1,7 +1,6 @@
 function searchCityEngine(response) {
-  console.log(response.data);
-
   let cityName = document.querySelector("#city-name");
+
   cityName.innerHTML = response.data.city;
 
   let temperatureValue = document.querySelector("#temperature-value");
@@ -52,6 +51,7 @@ function searchCity(event) {
   let apiKey = "6fe8tf4ae3fc290f9f3ff43213b0b7od";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${input.value}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(searchCityEngine);
+  defaultCity();
 }
 
 let form = document.querySelector("#search-form");
@@ -64,12 +64,16 @@ function displayForecast() {
     let day = days[i];
     forecastHtml += `
     <div>
-      <span class="day">${day}</span>
+      <span class="day">${data.condition.time}</span>
       <br />
-      <span class="day-emoji">🌨️</span>
+     <img src="${daata.condition.icon - url}" alt="${
+      data.condition.description
+    }" class="day-emoji" />
       <br />
       <span class="day-temperature">
-        <strong>15&deg</strong> 17&deg
+        <strong>${data.temperature.maximum}&deg</strong> ${
+      data.temperature.minimum
+    }&deg
       </span>
     </div>`;
   }
@@ -84,3 +88,8 @@ function defaultCity() {
   axios.get(apiUrl).then(searchCityEngine);
 }
 defaultCity();
+function showForecast() {
+  let apiKey = "6fe8tf4ae3fc290f9f3ff43213b0b7od";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
