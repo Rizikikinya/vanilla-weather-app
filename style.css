@@ -96,13 +96,32 @@ main {
 }
 .day {
   color: #842946;
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
 }
 .day-emoji {
-  font-size: 42px;
+  width: 88px;
+  height: 88px;
+
+  position: relative;
+  left: -30px;
+  padding-top: 20px;
 
   bottom: 10px;
 }
 .day-temperature {
   font-size: 16px;
   color: #f65282;
+}
+.min-value {
+  position: relative;
+  left: 10px;
+  color: #f65282;
+}
+.max-value {
+  position: relative;
+  left: -10px;
 }
